@@ -39,7 +39,7 @@ function Todo() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Form addTodo={addTodo} updateTodo={updateTodo} />} />
+                <Route path="/" element={<Form addTodo={addTodo} />} />
                 <Route path="/editTodo" element={<EditTodo updateTodo={updateTodo} />} />
             </Routes>
             <div className="todos">

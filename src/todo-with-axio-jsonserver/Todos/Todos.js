@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Todos({ users, updateTodo, deleteTodo }) {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     return (
         <div className="todo">
             <table className="table table-bordered">

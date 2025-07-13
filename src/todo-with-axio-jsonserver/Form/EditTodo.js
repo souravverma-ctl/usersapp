@@ -3,14 +3,14 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 function EditTodo({updateTodo}) {
     const location = useLocation();
-    const {id, firstname, lastname} = location.state.user;
+    const {ID, firstname, lastname} = location.state.user;
     const navigate = useNavigate();
     const [fname, setFname] = useState(firstname);
     const [lname, setLname] = useState(lastname);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        updateTodo({"id": id, "firstname": fname, "lastname": lname});
+        updateTodo({"id": ID, "firstname": fname, "lastname": lname});
         setFname("");
         setLname("");
         navigate("/");

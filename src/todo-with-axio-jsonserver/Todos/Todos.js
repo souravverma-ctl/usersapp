@@ -17,14 +17,14 @@ function Todos({ users, updateTodo, deleteTodo }) {
                     {users.map((user, i) => {
                         return (
                             <tr key={i}>
-                                <td>{user.id}</td>
+                                <td>{user.ID}</td>
                                 <td>{user.firstname}</td>
                                 <td>{user.lastname}</td>
                                 <td>
                                     <Link to="/editTodo" state={{user: user}}>
                                         <button type="button" className="btn btn-primary btn-sm">Edit</button>
                                     </Link>
-                                    <button type="button" className="btn btn-danger btn-sm ms-2" onClick={() => deleteTodo(user.id)}>Delete</button>
+                                    <button type="button" className="btn btn-danger btn-sm ms-2" onClick={() => deleteTodo(user.ID)}>Delete</button>
                                 </td>
                             </tr>
                         )

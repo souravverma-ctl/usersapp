@@ -14,17 +14,23 @@ function Todo() {
     }
 
     const updateTodo = async (obj) => {
-        const update = await api.put(`users/${obj.id}`, obj);
-        const updateData = update.data;
-        const updateModifyTodo = users.map(user => {
-            return user.id === updateData.id ? updateData : user
-        })
-        setUsers(updateModifyTodo);
-    }
+        try {
+            const response = await api.put(`/users/${obj.id}`, obj);
+            const updatedUser = response.data;
+
+            const updatedUsers = users.map(user =>
+                user.id === updatedUser.id ? updatedUser : user
+            );
+
+            setUsers(updatedUsers);
+        } catch (error) {
+            console.error("Failed to update user:", error);
+        }
+    };
 
     const deleteTodo = async (id) => {
         await api.delete(`/users/${id}`);
-        const filterTodo = users.filter(user => user.id !== id);
+        const filterTodo = users.filter(user => user.ID !== id);
         setUsers(filterTodo)
     }
 
